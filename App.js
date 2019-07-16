@@ -26,7 +26,7 @@ export default function App() {
       <Header
         backgroundColor='#fff'
         leftComponent={{ icon: 'chevron-left' }}
-        centerComponent={{ text: 'Version' }}
+        centerComponent={{ text: '내 정보' }}
         rightComponent={{ icon: 'coin', type: 'material-community' }}
       />
       <View style={[styles.box1]}>
@@ -61,9 +61,9 @@ export default function App() {
                   <ListItem 
                   key={i}
                   title={
-                    <View>
+                    <View alignItems='flex-end'>
                       <Text h4>{u.name}</Text>
-                      <Text>{u.expiry}</Text>
+                      <Text>유효기간 {u.expiry}</Text>
                       <Button buttonStyle={{ padding: 5, backgroundColor: '#F6AE2D'}} titleStyle={{fontSize: 10}} title='바코드' />
                     </View>
                   }
@@ -111,5 +111,6 @@ const styles = StyleSheet.create({
   iconText: {
     flexDirection: 'row',
     alignItems: 'center'
-  }
+  },
+
 });
