@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card } from './style';
+import { View } from 'react-native';
 import Cupon from './Cupon';
 
 const CuponList = (props) => {
   const { cupons } = props;
   return (
-    <Card>
-      { cupons.map((cupon) => (<Cupon {...cupon} />)) }
-    </Card>
+    <View>
+      { cupons.map((cupon, index) => (<Cupon key={index} {...cupon} />)) }
+    </View>
   );
 };
 

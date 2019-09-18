@@ -1,26 +1,23 @@
 import React from 'react';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
-import { View, Text } from 'react-native';
-import { ListItem, Button } from 'react-native-elements';
+import {
+  PrimaryButton, Wrapper, Description, Header, RoundedImage,
+} from './style';
 
-const Cupon = (props) => {
-  const { name, expiry, img } = props;
-  return (
-    <ListItem
-      title={(
-        <View alignItems='flex-end'>
-          <Text h4>{name}</Text>
-          <Text>유효기간 {expiry}</Text>
-          <Button buttonStyle={{ padding: 5, backgroundColor: '#F6AE2D' }} titleStyle={{ fontSize: 10 }} title='바코드' />
-        </View>
-      )}
-      bottomDivider
-      leftAvatar={{
-        rounded: true, width: 100, height: 100, source: { uri: img }
-      }}
-    />
+const Cupon = ({ name, expiry, img }) => (
+  <Wrapper>
+    <RoundedImage source={{ uri: img }} />
+    <View>
+      <Header>{name}</Header>
+      <Description>
+      Other text
+        {expiry}
+      </Description>
+      <PrimaryButton color="#F6AE2D" title="바코드" />
+    </View>
+  </Wrapper>
 );
-};
 
 Cupon.propTypes = {
   name: PropTypes.string.isRequired,
